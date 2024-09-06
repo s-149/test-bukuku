@@ -1,0 +1,213 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "BUKUKU API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/fizzbuzz": {
+            "post": {
+                "tags": [
+                    "CodingTest"
+                ],
+                "summary": "Generate FizzBuzz sequence",
+                "description": "Returns FizzBuzz sequence up to the number n",
+                "operationId": "codingtest",
+                "parameters": [
+                    {
+                        "name": "n",
+                        "in": "query",
+                        "description": "Maximum number of ones",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 3
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input"
+                    }
+                }
+            }
+        },
+        "/api/findMaxForm": {
+            "post": {
+                "tags": [
+                    "CodingTest"
+                ],
+                "summary": "Find the maximum subset of binary strings",
+                "description": "Given an array of binary strings and two integers, returns the largest subset with at most m zeros and n ones.",
+                "operationId": "32af47c1862e7ac7dc137162d0bb671f",
+                "parameters": [
+                    {
+                        "name": "strs[]",
+                        "in": "query",
+                        "description": "Array of binary strings",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "example": [
+                                "10",
+                                "0001",
+                                "111001",
+                                "1",
+                                "0"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "m",
+                        "in": "query",
+                        "description": "Maximum number of zeros",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 5
+                        }
+                    },
+                    {
+                        "name": "n",
+                        "in": "query",
+                        "description": "Maximum number of ones",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 3
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "maxSubsetSize": {
+                                            "type": "integer",
+                                            "example": 4
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/min-largest-sum": {
+            "post": {
+                "tags": [
+                    "CodingTest"
+                ],
+                "summary": "Get the minimum largest sum of splitting array into k subarrays",
+                "description": "Given an array of integers and an integer k, this endpoint returns the minimum largest sum of any of the k subarrays into which the array can be divided.",
+                "operationId": "f94a9864ceac3cf1dce263291e6a4039",
+                "parameters": [
+                    {
+                        "name": "nums[]",
+                        "in": "query",
+                        "description": "Array of integer",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "integer"
+                            },
+                            "example": [
+                                1,
+                                2,
+                                3,
+                                4,
+                                5
+                            ]
+                        }
+                    },
+                    {
+                        "name": "k",
+                        "in": "query",
+                        "description": "Minimum number 2",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "example": 2
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "minLargestSum": {
+                                            "type": "integer",
+                                            "example": 9
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid input",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "CodingTest",
+            "description": "CodingTest"
+        }
+    ]
+}
